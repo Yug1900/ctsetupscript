@@ -2,8 +2,8 @@
 
 Basic setup script for Proxmox containers that updates packages, installs common tools, and enables `fastfetch` for interactive shells.
 
-Run from the repository root:
+One-Liner:
 
 ```bash
-sudo bash /home/runner/work/ctsetupscript/ctsetupscript/setup-proxmox-container.sh
+wget -qO- https://raw.githubusercontent.com/Yug1900/ctsetupscript/main/setup.sh | bash
 ```
