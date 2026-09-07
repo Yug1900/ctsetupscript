@@ -12,7 +12,7 @@ apt update
 apt upgrade -y
 apt install -y curl tmux btop htop fastfetch
 
-FASTFETCH_LINE='if [[ $- == *i* ]] && [[ "${EUID}" -ne 0 ]]; then fastfetch; fi'
+FASTFETCH_LINE='if [[ $- == *i* ]]; then fastfetch; fi'
 if ! grep -Fxq "$FASTFETCH_LINE" /etc/profile; then
   echo "$FASTFETCH_LINE" >> /etc/profile
 fi
