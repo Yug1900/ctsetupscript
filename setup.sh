@@ -14,7 +14,7 @@ apt install -y curl tmux btop htop fastfetch
 
 if [[ -e /etc/profile.d/00_lxc-details.sh ]]; then
   echo "/etc/profile.d/00_lxc-details.sh is a leftover script from Proxmox Community scripts and is redundant with fastfetch."
-  if [[ -t 0 && -t 1 ]]; then
+  if [[ -t 0 ]]; then
     read -r -p "Delete it? [y/N] " delete_lxc_details
     case "${delete_lxc_details:-N}" in
       [Yy]|[Yy][Ee][Ss]) rm -f /etc/profile.d/00_lxc-details.sh ;;
