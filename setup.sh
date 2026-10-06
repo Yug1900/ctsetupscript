@@ -11,8 +11,9 @@ rm -f /etc/motd
 apt update
 apt upgrade -y
 apt install -y curl tmux btop htop fastfetch
-
-FASTFETCH_LINE='if [[ $- == *i* ]]; then fastfetch; fi'
-if ! grep -Fxq "$FASTFETCH_LINE" /etc/profile; then
-  echo "$FASTFETCH_LINE" >> /etc/profile
+cat > /etc/profile.d/fastfetch.sh <<'EOF'
+if [[ $- == *i* ]]; then
+  fastfetch
 fi
+EOF
+chmod +x /etc/profile.d/fastfetch.sh
